@@ -16,16 +16,34 @@ determina.
 
         System.out.println("¿Desea conocer la longitud, el area o el volumen de uan esfera?");
         respuesta = leerCaracter();
-        while (respuesta == 's' || respuesta == 'S') {
+        boolean salir = false;
+
+        if (respuesta == 's' || respuesta == 'S') {
+
+
+            mostrarMenu();
             do {
-                mostrarMenu();
+                int opcion = leerDatos();
 
 
-            }while (leerDatos()==0);
-            pintarMenu();
-            System.out.println("¿Quiere volver a probar?");
-            leerCaracter();
+                switch (opcion) {
+                    case 1 -> System.out.println(hallarLongitud());
+                    case 2 -> System.out.println(hallarArea());
+                    case 3 -> System.out.println(hallarVolumen());
+                    case 0 -> {
+                        System.out.println("Hasta la vista");
+                        salir = true;
+                    }
+                    default -> System.out.println("opcion incorrecta");
+                }
+
+            } while (!salir);
+
+        } else {
+
+            System.out.println("Ha sido un placer");
         }
+
 
     }
 
@@ -39,38 +57,47 @@ determina.
         return sc.nextInt();
     }
 
-    public static void mostrarMenu(){
+    public static void mostrarMenu() {
+
 
         System.out.println("**********     MENU DE OPCIONES     **********" +
                 "\n1 - hallar la Longitud de una Esfera " +
                 "\n2 - hallar el Area de una Esfera" +
                 "\n3 - hallar el Volumen de una Esfera" +
-                "\n" +
+                "\n0 - salir" +
                 "\n****************************************");
     }
-    public static void pintarMenu(){
 
-        boolean salir=false;
-
-        int opcion=leerDatos();
-
-        switch (opcion){
-            case 1:
-                System.out.println("en construccion");
-                break;
-            case 2:
-                System.out.println("en construccion");
-                break;
-            case 3:
-                System.out.println("en construccion");
-                break;
-            case 0:{
-                System.out.println("en construccion");
-                salir=true;
-            }
-            default:
-                System.out.println("opcion incorrecta");
-        }
+    public static void pedirRadio() {
+        System.out.println("Introduzca el Radio de la Esfera");
     }
+
+    public static float hallarLongitud() {
+        pedirRadio();
+        float radio = (float) leerDatos();
+        float longitud = 2 * (float) (Math.PI) * radio;
+
+        return longitud;
+
+    }
+
+    public static float hallarArea() {
+        pedirRadio();
+        float radio = (float) leerDatos();
+        float area = 4 * (float) (Math.PI) * (float) (Math.pow(radio, 2));
+
+        return area;
+
+    }
+
+    public static double hallarVolumen() {
+        pedirRadio();
+        float radio = (float) leerDatos();
+        double volumen = (4 * (Math.PI) * (Math.pow(radio, 3)) / 3);
+
+        return volumen;
+
+    }
+
 
 }
