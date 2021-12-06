@@ -59,13 +59,12 @@ determina.
 
     public static void mostrarMenu() {
 
-
-        System.out.println("**********     MENU DE OPCIONES     **********" +
-                "\n1 - hallar la Longitud de una Esfera " +
-                "\n2 - hallar el Area de una Esfera" +
-                "\n3 - hallar el Volumen de una Esfera" +
-                "\n0 - salir" +
-                "\n****************************************");
+          System.out.println("**********     MENU DE OPCIONES     **********" +
+                         "\n1 - hallar la Longitud de una Esfera " +
+                         "\n2 - hallar el Area de una Esfera" +
+                         "\n3 - hallar el Volumen de una Esfera" +
+                         "\n0 - salir" +
+                         "\n************************************************");
     }
 
     public static void pedirRadio() {
