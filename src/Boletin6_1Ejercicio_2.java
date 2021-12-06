@@ -18,9 +18,11 @@ determina.
         respuesta = leerCaracter();
         while (respuesta == 's' || respuesta == 'S') {
             do {
-                pintarMenu();
-            }while (leerDatos()==0);
+                mostrarMenu();
 
+
+            }while (leerDatos()==0);
+            pintarMenu();
             System.out.println("¿Quiere volver a probar?");
             leerCaracter();
         }
@@ -36,10 +38,15 @@ determina.
 
         return sc.nextInt();
     }
+
     public static void mostrarMenu(){
 
         System.out.println("**********     MENU DE OPCIONES     **********" +
-                "\n ");
+                "\n1 - hallar la Longitud de una Esfera " +
+                "\n2 - hallar el Area de una Esfera" +
+                "\n3 - hallar el Volumen de una Esfera" +
+                "\n" +
+                "\n****************************************");
     }
     public static void pintarMenu(){
 
