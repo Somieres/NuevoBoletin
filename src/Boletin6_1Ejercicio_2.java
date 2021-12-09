@@ -14,7 +14,7 @@ determina.
 
         char respuesta;
 
-        System.out.println("¿Desea conocer la longitud, el area o el volumen de uan esfera?");
+        System.out.println("¿Desea conocer la longitud, el area o el volumen de una esfera?");
         respuesta = leerCaracter();
         boolean salir = false;
 
